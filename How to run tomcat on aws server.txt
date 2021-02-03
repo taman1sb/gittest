@@ -1,0 +1,57 @@
+1. Launch EC2 instance
+2. Select AmazonLinux Ami
+3. Do not change any setting upto running
+4. Create ssh key, if creating new one:
+	a. the downloaded file will be in pem format
+	b. we need to convert into ppk format
+	c. open puttygen
+	d. load the pem file
+	e. save as private key
+
+5. open Putty
+	a. in hostname IP address pase public DNS which should look like "ec2-3-16-158-24.us-east-2.compute.amazonaws.com"
+	b. go to SSH and Auth and load your PPK key
+	c. now you can start your putty
+6. Login as ec2-user
+7. sudo yum update // incase anyupdate needed
+8. be a root user 
+	sudo su
+9. create new directory named java
+	mkdir java
+10. go into java
+	cd java
+11. install java
+	 sudo yum install java-1.8.0
+12. check java version
+	java --version
+13. Install Tomcat
+14. Download tar file from Tomcat download page
+	https://mirrors.ocf.berkeley.edu/apache/tomcat/tomcat-9/v9.0.43/bin/apache-tomcat-9.0.43.tar.gz
+15. unzip tar file tar xvfz after this copy paste tar file name
+	tar xvfz apache-tomcat-9.0.43.tar.gz
+16. go to bin and start
+	cd bin
+	./startup.sh
+17. to give acces to EC2 instance we need to edit context.xml file
+	vi webapps/manager/META-INF/context.xml
+18. comment out like below
+	<!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+19. to edit text file we need vi 
+20. to exit text file press "shit=ft and :" type wq and hit enter
+21. to insert text press i and press escape key to stop editing
+22. edit conf tomcat-users.xml file to give access to manager user later
+23. We need to edit security inbound to allow tomcat/localhost to access the ip address
+	a. click on instance ID
+	b. got to security
+	c. click on security groups
+	d. click edit inbound rules
+	e. type Custom TCP port 8080 source 0.0.0.0/0
+	f. save
+
+24. Opentomcat from browser using Public IPv4 DNS and :port number
+	http://ec2-3-16-158-24.us-east-2.compute.amazonaws.com:8080/
+	
+
+	
+	
