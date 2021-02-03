@@ -1,0 +1,10 @@
+How to add add files in your git repository?
+
+1. open gitbash at the directory
+2. git init
+3. go to github and copy the address of your git reposiroty
+4. git remote add origin paste git repository link here
+5. git add .
+6. git commit -m "Type your commit message here"
+7. git push origin master
+8. git status
