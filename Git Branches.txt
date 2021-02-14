@@ -1,8 +1,9 @@
 1. To creat new Branch named develop
 
-git checkout develop
+git checkout -b develop
 
 1-i. to push the created branch to repositroy
+
 git push origin develop
 
 2. To switch back to master branch
@@ -25,4 +26,8 @@ $ git push origin : develop
 5. TO merge Branches master and develop
 
 $ git merge master/develop
+
+6. To push the merged branch to git hub
+
+$ git push -u origin <branch_name>
 
