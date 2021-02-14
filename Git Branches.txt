@@ -1,0 +1,33 @@
+1. To creat new Branch named develop
+
+git checkout -b develop
+
+1-i. to push the created branch to repositroy
+
+git push origin develop
+
+2. To switch back to master branch
+
+git checkout master
+
+3. To see all the branches
+
+git checkout -a
+
+4. To delete Branch Develop
+
+$ git branch -d Develop
+
+4. i. To delete develop Branch in github
+
+$ git push origin : develop
+
+
+5. TO merge Branches master and develop
+
+$ git merge master/develop
+
+6. To push the merged branch to git hub
+
+$ git push -u origin <branch_name>
+
